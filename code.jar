@@ -1,0 +1,125 @@
+var cost=0;
+onEvent("homeButton", "click", function() {
+  setScreen("welcomeScreen");
+});
+onEvent("beginButton", "click", function() {
+  setScreen("screen1");
+});
+onEvent("howAppWorksButton", "click", function() {
+  setScreen("infoScreen");
+});
+onEvent("15", "click", function() {
+  var x = promptNum("What's the total cost of your meal?");
+  x = x*0.15;
+  x =Math.round(100 * x)/100;
+  setScreen("screen2");
+  setText("tip", x);
+  onEvent("individual", "click", function() {
+    var a = promptNum("How many people are in your party?");
+    a= x/a;
+    a= Math.round(100*a)/100;
+    setScreen("screen3");
+    setText("each",a);
+  });
+  
+});
+onEvent("20", "click", function() {
+  var y = promptNum("What's the total cost of your meal?");
+  y = y*0.2;
+  y =  Math.round(100 * y)/100;
+  setScreen("screen2");
+  setText("tip",y);
+  onEvent("individual", "click", function() {
+    var b = promptNum("How many people are in your party?");
+    b= y/b;
+    b= Math.round(100*b)/100;
+    setScreen("screen3");
+    setText("each",b);
+  });
+});
+onEvent("25", "click", function() {
+  var z = promptNum("What's the total cost of your meal?");
+  z = z*0.25;
+  z =  Math.round(100 * z)/100;
+  setScreen("screen2");
+  setText("tip", z);
+  onEvent("individual", "click", function() {
+    var c = promptNum("How many people are in your party?");
+    c= z/c;
+    c= Math.round(100*c)/100;
+    setScreen("screen3");
+    setText("each",c);
+  });
+});
+onEvent("return", "click", function() {
+  setScreen("screen1");
+  setText("tip","");
+});
+onEvent("home", "click", function() {
+  setScreen("welcomeScreen");
+  setText("each","");
+});
+onEvent("deepDishCrust", "click", function() {
+  setScreen("sauceScreen");
+  cost=cost+3;
+  setText("text_area3", "Your price so far is: " + "$" +cost);
+  
+});
+onEvent("rawCrust", "click", function() {
+  setScreen("sauceScreen");
+  cost=cost+1;
+  setText("text_area3", "Your price so far is: " + "$" + cost);
+});
+onEvent("thinCrust", "click", function() {
+  setScreen("sauceScreen");
+  cost= cost + 2;
+  setText("text_area3", "Your price so far is: " + "$"+ cost);
+});
+onEvent("makePizza", "click", function() {
+  setScreen("crustScreen");
+});
+onEvent("pestoSauce", "click", function() {
+  setScreen("cheeseScreen");
+  cost=cost+1;
+  setText("text_area5", "Your price so far is: " +  "$" +cost);
+});
+onEvent("marinaraSauce", "click", function() {
+  setScreen("cheeseScreen");
+  cost=cost+2;
+  setText("text_area5", "Your price so far is: " + "$"+ cost);
+});
+onEvent("meatSauce", "click", function() {
+  setScreen("cheeseScreen");
+  cost=cost+3;
+  setText("text_area5", "Your price so far is: " + "$" + cost);
+});
+onEvent("cheddarCheese", "click", function() {
+  setScreen ("toppingsScreen");
+  cost=cost+randomNumber(1,10);
+  setText ("text_area7", "Your price so far is: " + "$"+ cost);
+});
+onEvent("mozzarellaCheese", "click", function() {
+  setScreen("toppingsScreen");
+  cost=cost+randomNumber (1,10);
+  setText ("text_area7", "Your price so far is: " + "$"+ cost);
+});
+onEvent("colbyCheese", "click", function() {
+  setScreen("toppingsScreen");
+  cost=cost+randomNumber (1,10);
+ setText ("text_area7", "Your price so far is: " + "$"+ cost);
+});
+onEvent("mushroomsButton", "click", function() {
+   cost=cost+randomNumber (1,10);
+   setText ("text_area10", "Your price so far is: " + "$"+ cost);
+});
+onEvent("pepperoniButton", "click", function() {
+  cost=cost+randomNumber (1,10);
+   setText ("text_area10", "Your price so far is: " + "$"+ cost);
+});
+onEvent("sausageButton", "click", function() {
+  cost=cost+randomNumber (1,10);
+   setText ("text_area10", "Your price so far is: " + "$"+ cost);
+});
+onEvent("nextButton", "click", function() {
+  setScreen("drinkScreen");
+});

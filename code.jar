@@ -123,3 +123,52 @@ onEvent("sausageButton", "click", function() {
 onEvent("nextButton", "click", function() {
   setScreen("drinkScreen");
 });
+onEvent("cokeButton", "click", function() {
+   hideElement("sprite");
+  hideElement("diet");
+  hideElement("diet2");
+  hideElement("coke2");
+  hideElement("fanta");
+  showElement("coke");
+
+});
+onEvent("dietButton", "click", function() {
+     hideElement("coke");
+ hideElement("sprite");
+  hideElement("diet2");
+  hideElement("coke2");
+  hideElement("fanta");
+    showElement("diet");
+});
+onEvent("fantaButton", "click", function() {
+     hideElement("coke");
+ hideElement("sprite");
+  hideElement("diet");
+  hideElement("diet2");
+  hideElement("coke2");
+    showElement("fanta");
+});
+onEvent("spriteButton", "click", function() {
+     hideElement("coke");
+  hideElement("diet");
+  hideElement("diet2");
+  hideElement("coke2");
+  hideElement("fanta");
+    showElement("sprite");
+});
+onEvent("cokeButton2", "click", function() {
+     hideElement("coke");
+ hideElement("sprite");
+  hideElement("diet");
+  hideElement("diet2");
+  hideElement("fanta");
+    showElement("coke2");
+});
+onEvent("dietButton2", "click", function() {
+     hideElement("coke");
+ hideElement("sprite");
+  hideElement("diet");
+  hideElement("coke2");
+  hideElement("fanta");
+    showElement("diet2");
+});
